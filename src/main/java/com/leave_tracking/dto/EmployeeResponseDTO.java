@@ -1,9 +1,14 @@
 package com.leave_tracking.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.leave_tracking.utility.LeaveType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatusCode;
+
+import java.time.LocalDate;
+import java.util.Map;
 
 @Data
 @AllArgsConstructor
@@ -18,9 +23,15 @@ public class EmployeeResponseDTO  {
     private String mobile;
 
     // Department details (nested object)
+    @JsonProperty("departmentid")
     private DepartmentResponseDTO department;
 
     // Job role details (nested object)
+    @JsonProperty("jobRoleid")
     private JobRoleResponseDTO jobRole;
+
+    private ManagersResponseDTO managerId;
+    private LocalDate joinDate;
+    private Map<LeaveType, Double> leaveBalance;
 
 }

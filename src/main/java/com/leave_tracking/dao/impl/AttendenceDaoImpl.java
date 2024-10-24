@@ -21,7 +21,7 @@ public class AttendenceDaoImpl implements AttendenceDao {
     @Override
     public EmployeeResponseDTO markAttendance(Attendance attendance) {
 
-        EmployeeResponseDTO employeeResponseDTO = restTemplate.getForObject("http://localhost:8080/ems/api/2",EmployeeResponseDTO.class);
+        EmployeeResponseDTO employeeResponseDTO = restTemplate.getForObject("http://localhost:8080/ems/api/4",EmployeeResponseDTO.class);
         System.out.println("markattendence || "+employeeResponseDTO);
 
         return employeeResponseDTO;
